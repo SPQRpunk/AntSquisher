@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpono8avgre0s"]
+
+[ext_resource type="Script" path="res://SmushSprite.gd" id="1_ew64h"]
+
+[node name="Smush" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_ew64h")
+
+[node name="SmushSprite" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

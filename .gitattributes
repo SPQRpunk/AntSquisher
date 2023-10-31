@@ -1,0 +1,13 @@
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+Assets/Anthill.aseprite filter=lfs diff=lfs merge=lfs -text
+Assets/Anthill.png.import filter=lfs diff=lfs merge=lfs -text
+Assets/Ants filter=lfs diff=lfs merge=lfs -text
+Assets/Default[[:space:]](256px) filter=lfs diff=lfs merge=lfs -text
+Assets/tilemap_packed[[:space:]]-[[:space:]]Copy.png.import filter=lfs diff=lfs merge=lfs -text
+Assets/tilemap_packed.png filter=lfs diff=lfs merge=lfs -text
+Assets/Anthill.png filter=lfs diff=lfs merge=lfs -text
+Assets/Double[[:space:]](512px) filter=lfs diff=lfs merge=lfs -text
+Assets/Interface filter=lfs diff=lfs merge=lfs -text
+Assets/tilemap_packed[[:space:]]-[[:space:]]Copy.png filter=lfs diff=lfs merge=lfs -text
+Assets/tilemap_packed.png.import filter=lfs diff=lfs merge=lfs -text

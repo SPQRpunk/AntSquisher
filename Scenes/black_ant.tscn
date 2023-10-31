@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://cd16psuh14cv4"]
+
+[ext_resource type="Script" path="res://Scripts/black_ant.gd" id="1_kxk0c"]
+[ext_resource type="Texture2D" uid="uid://ci7icn3mhh0s7" path="res://Assets/Ants/AntSprite001-sheet.png" id="1_xukfn"]
+[ext_resource type="PackedScene" uid="uid://dpono8avgre0s" path="res://Scenes/smush_sprite.tscn" id="2_ltrnm"]
+[ext_resource type="Texture2D" uid="uid://bsxssijkjlosm" path="res://Assets/Ants/AntSpritecrushed.png" id="3_oncpy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n28q"]
+radius = 12.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uec5"]
+atlas = ExtResource("1_xukfn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu7sb"]
+atlas = ExtResource("1_xukfn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1vwk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oncpy")
+}],
+"loop": true,
+"name": &"ant_crushed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uec5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu7sb")
+}],
+"loop": true,
+"name": &"ant_walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xukfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7t0nm"]
+radius = 16.0
+
+[node name="BlackAntBody" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+safe_margin = 0.001
+script = ExtResource("1_kxk0c")
+smushscene = ExtResource("2_ltrnm")
+
+[node name="AntCollide" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1n28q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s1vwk")
+animation = &"ant_crushed"
+autoplay = "ant_walking"
+frame_progress = 0.274093
+
+[node name="BlackAntTimer" type="Timer" parent="."]
+wait_time = 0.107
+autostart = true
+
+[node name="BlackAntArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackAntArea"]
+shape = SubResource("CircleShape2D_7t0nm")
+
+[node name="CrushTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="BlackAntTimer" to="." method="_on_black_ant_timer_timeout"]
+[connection signal="input_event" from="BlackAntArea" to="." method="_on_black_ant_area_input_event"]
+[connection signal="timeout" from="CrushTimer" to="." method="_on_crush_timer_timeout"]
