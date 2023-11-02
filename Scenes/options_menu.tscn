@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://bbhb8q8427qmn"]
+
+[ext_resource type="Texture2D" uid="uid://dcxd75l86n8wd" path="res://Assets/Interface/OptionsMenu.png" id="1_el83o"]
+[ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_gkhp1"]
+[ext_resource type="Texture2D" uid="uid://bpatc5v2qrxsb" path="res://Assets/Interface/Options.png" id="2_qqhun"]
+[ext_resource type="Texture2D" uid="uid://bntv33llbslaw" path="res://Assets/Interface/Red.png" id="3_0ihxo"]
+[ext_resource type="Texture2D" uid="uid://bgo0wxfv4ywck" path="res://Assets/Interface/Green.png" id="4_rndqj"]
+[ext_resource type="Texture2D" uid="uid://dwtg8qjfgnjgo" path="res://Assets/Interface/Blue.png" id="5_g4rwm"]
+[ext_resource type="Texture2D" uid="uid://d310lmlm2s4x8" path="res://Assets/Interface/Colors.png" id="6_qy4ve"]
+[ext_resource type="Texture2D" uid="uid://cg8jm62jktq7g" path="res://Assets/Interface/Sounds.png" id="7_sjq2r"]
+[ext_resource type="Texture2D" uid="uid://711x7npqkgbo" path="res://Assets/Interface/ReturnButton.png" id="8_wk74y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpvxk"]
+size = Vector2(100, 100)
+
+[node name="Options Menu" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_gkhp1")]
+
+[node name="Textures" type="Node2D" parent="."]
+
+[node name="OptionMenuSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(399, 241)
+texture = ExtResource("1_el83o")
+
+[node name="OptionMenuTitleSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(171, 81)
+texture = ExtResource("2_qqhun")
+
+[node name="RedSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(155, 245)
+texture = ExtResource("3_0ihxo")
+
+[node name="GreenSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(152, 281)
+texture = ExtResource("4_rndqj")
+
+[node name="BlueSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(157, 314)
+texture = ExtResource("5_g4rwm")
+
+[node name="ColorsSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(305, 192)
+texture = ExtResource("6_qy4ve")
+
+[node name="SoundsSprite" type="Sprite2D" parent="Textures"]
+position = Vector2(308, 354)
+texture = ExtResource("7_sjq2r")
+
+[node name="ReturnButton" type="Sprite2D" parent="."]
+position = Vector2(699, 104)
+texture = ExtResource("8_wk74y")
+
+[node name="ReturnButtonArea" type="Area2D" parent="ReturnButton"]
+
+[node name="ReturnButtonCollider" type="CollisionShape2D" parent="ReturnButton/ReturnButtonArea"]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_qpvxk")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 59.0
+offset_top = 170.0
+offset_right = 733.0
+offset_bottom = 421.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 177.0
+offset_top = -209.0
+offset_right = -12.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="RedSlider" type="HSlider" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+max_value = 255.0
+
+[node name="GreenSlider" type="HSlider" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+max_value = 255.0
+
+[node name="BlueSlider" type="HSlider" parent="Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+max_value = 255.0

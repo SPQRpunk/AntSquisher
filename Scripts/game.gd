@@ -49,7 +49,7 @@ func _on_options_button_area_input_event(_viewport, event, _shape_idx):
 				print("An Error has occurred. The Area2D Node for the Options button detected something it shouldn't have.")
 
 
-func _on_return_button_area_input_event(viewport, event, shape_idx):
+func _on_return_button_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			current_state = previous_state

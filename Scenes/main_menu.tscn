@@ -1,18 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bubj884na54s2"]
+[gd_scene load_steps=9 format=3 uid="uid://bubj884na54s2"]
 
 [ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_ahcaq"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_eh3og"]
 [ext_resource type="Script" path="res://Scripts/Marker2D.gd" id="4_npvnq"]
 [ext_resource type="PackedScene" uid="uid://cd16psuh14cv4" path="res://Scenes/black_ant.tscn" id="5_4evfr"]
+[ext_resource type="PackedScene" uid="uid://bbhb8q8427qmn" path="res://Scenes/options_menu.tscn" id="6_6lqc4"]
 [ext_resource type="Texture2D" uid="uid://docpj06d0xd6p" path="res://Assets/Interface/MainMenu6-3.png" id="6_j6v8a"]
-[ext_resource type="Texture2D" uid="uid://dcxd75l86n8wd" path="res://Assets/Interface/OptionsMenu.png" id="7_sv6fe"]
-[ext_resource type="Texture2D" uid="uid://bpatc5v2qrxsb" path="res://Assets/Interface/Options.png" id="8_lxxdr"]
-[ext_resource type="Texture2D" uid="uid://711x7npqkgbo" path="res://Assets/Interface/ReturnButton.png" id="9_r1x8c"]
-[ext_resource type="Texture2D" uid="uid://bntv33llbslaw" path="res://Assets/Interface/Red.png" id="9_us5ki"]
-[ext_resource type="Texture2D" uid="uid://bgo0wxfv4ywck" path="res://Assets/Interface/Green.png" id="10_0d0tp"]
-[ext_resource type="Texture2D" uid="uid://dwtg8qjfgnjgo" path="res://Assets/Interface/Blue.png" id="11_1uyrv"]
-[ext_resource type="Texture2D" uid="uid://d310lmlm2s4x8" path="res://Assets/Interface/Colors.png" id="12_awxcq"]
-[ext_resource type="Texture2D" uid="uid://cg8jm62jktq7g" path="res://Assets/Interface/Sounds.png" id="13_hon6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ql4l"]
 radius = 34.0
@@ -21,9 +14,6 @@ height = 174.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1vd5"]
 radius = 34.0
 height = 240.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpvxk"]
-size = Vector2(100, 100)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_eh3og")
@@ -49,7 +39,6 @@ wait_time = 2.0
 autostart = true
 
 [node name="Main Menu" type="Node2D" parent="."]
-visible = false
 
 [node name="PlayButtonArea" type="Area2D" parent="Main Menu"]
 
@@ -70,88 +59,7 @@ top_level = true
 position = Vector2(399, 209)
 texture = ExtResource("6_j6v8a")
 
-[node name="Options Menu" type="Node2D" parent="."]
-visible = false
-
-[node name="Textures" type="Node2D" parent="Options Menu"]
-
-[node name="OptionMenuSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(399, 241)
-texture = ExtResource("7_sv6fe")
-
-[node name="OptionMenuTitleSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(171, 81)
-texture = ExtResource("8_lxxdr")
-
-[node name="RedSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(155, 245)
-texture = ExtResource("9_us5ki")
-
-[node name="GreenSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(152, 281)
-texture = ExtResource("10_0d0tp")
-
-[node name="BlueSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(157, 314)
-texture = ExtResource("11_1uyrv")
-
-[node name="ColorsSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(305, 192)
-texture = ExtResource("12_awxcq")
-
-[node name="SoundsSprite" type="Sprite2D" parent="Options Menu/Textures"]
-position = Vector2(308, 354)
-texture = ExtResource("13_hon6o")
-
-[node name="ReturnButton" type="Sprite2D" parent="Options Menu"]
-position = Vector2(699, 104)
-texture = ExtResource("9_r1x8c")
-
-[node name="ReturnButtonArea" type="Area2D" parent="Options Menu/ReturnButton"]
-
-[node name="ReturnButtonCollider" type="CollisionShape2D" parent="Options Menu/ReturnButton/ReturnButtonArea"]
-position = Vector2(-2, 1)
-shape = SubResource("RectangleShape2D_qpvxk")
-
-[node name="Container" type="Control" parent="Options Menu"]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 59.0
-offset_top = 170.0
-offset_right = 733.0
-offset_bottom = 421.0
-grow_horizontal = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Options Menu/Container"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 177.0
-offset_top = -209.0
-offset_right = -12.0
-offset_bottom = -72.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="RedSlider" type="HSlider" parent="Options Menu/Container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-max_value = 255.0
-
-[node name="GreenSlider" type="HSlider" parent="Options Menu/Container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-max_value = 255.0
-
-[node name="BlueSlider" type="HSlider" parent="Options Menu/Container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-max_value = 255.0
+[node name="Options Menu" parent="." instance=ExtResource("6_6lqc4")]
 
 [node name="Play Game" type="Node2D" parent="."]
 visible = false
@@ -160,7 +68,3 @@ visible = false
 [connection signal="timeout" from="Marker2D2/MenuSpawnTimer" to="Marker2D2" method="_on_menu_spawn_timer_timeout"]
 [connection signal="input_event" from="Main Menu/PlayButtonArea" to="." method="_on_play_button_area_input_event"]
 [connection signal="input_event" from="Main Menu/OptionsButtonArea" to="." method="_on_options_button_area_input_event"]
-[connection signal="input_event" from="Options Menu/ReturnButton/ReturnButtonArea" to="." method="_on_return_button_area_input_event"]
-[connection signal="value_changed" from="Options Menu/Container/VBoxContainer/RedSlider" to="TileMap" method="_on_red_slider_value_changed"]
-[connection signal="value_changed" from="Options Menu/Container/VBoxContainer/GreenSlider" to="TileMap" method="_on_green_slider_value_changed"]
-[connection signal="value_changed" from="Options Menu/Container/VBoxContainer/BlueSlider" to="TileMap" method="_on_blue_slider_value_changed"]
