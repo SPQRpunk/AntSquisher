@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc2q6ive0fe3s"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_064wn"]
+[ext_resource type="Resource" uid="uid://dstblipjjf1sg" path="res://Resources/SceneResource.tres" id="2_1orip"]
+[ext_resource type="PackedScene" uid="uid://dnmddtejidcld" path="res://Scenes/boot_splash.tscn" id="2_shan5"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_064wn")
+SceneVariables = ExtResource("2_1orip")
+
+[node name="BootSplash" parent="." instance=ExtResource("2_shan5")]

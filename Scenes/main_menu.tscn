@@ -1,70 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://bubj884na54s2"]
+[gd_scene load_steps=8 format=3 uid="uid://de36nidp8kl1s"]
 
 [ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_ahcaq"]
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_eh3og"]
-[ext_resource type="Script" path="res://Scripts/Marker2D.gd" id="4_npvnq"]
-[ext_resource type="PackedScene" uid="uid://cd16psuh14cv4" path="res://Scenes/black_ant.tscn" id="5_4evfr"]
-[ext_resource type="PackedScene" uid="uid://bbhb8q8427qmn" path="res://Scenes/options_menu.tscn" id="6_6lqc4"]
+[ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="3_cvktw"]
+[ext_resource type="Resource" uid="uid://dstblipjjf1sg" path="res://Resources/SceneResource.tres" id="4_3n17a"]
+[ext_resource type="Script" path="res://Scripts/OptionsButton.gd" id="5_okq7f"]
 [ext_resource type="Texture2D" uid="uid://docpj06d0xd6p" path="res://Assets/Interface/MainMenu6-3.png" id="6_j6v8a"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ql4l"]
-radius = 34.0
-height = 174.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bjp2o"]
+radius = 35.0
+height = 178.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1vd5"]
-radius = 34.0
-height = 240.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8y41n"]
+radius = 35.0
+height = 270.0
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_eh3og")
+[node name="Main Menu" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_ahcaq")]
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(633, 385)
-script = ExtResource("4_npvnq")
-AntScene = ExtResource("5_4evfr")
-
-[node name="MenuSpawnTimer" type="Timer" parent="Marker2D"]
-wait_time = 2.0
-autostart = true
-
-[node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(150, 85)
-script = ExtResource("4_npvnq")
-AntScene = ExtResource("5_4evfr")
-
-[node name="MenuSpawnTimer" type="Timer" parent="Marker2D2"]
-wait_time = 2.0
-autostart = true
-
-[node name="Main Menu" type="Node2D" parent="."]
-
-[node name="PlayButtonArea" type="Area2D" parent="Main Menu"]
-
-[node name="PlayButtonCollider" type="CollisionShape2D" parent="Main Menu/PlayButtonArea"]
-position = Vector2(397, 301)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_6ql4l")
-
-[node name="OptionsButtonArea" type="Area2D" parent="Main Menu"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Main Menu/OptionsButtonArea"]
-position = Vector2(401, 369)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_f1vd5")
-
-[node name="MainMenuTexture" type="Sprite2D" parent="Main Menu"]
-top_level = true
-position = Vector2(399, 209)
+[node name="MainMenuGraphics" type="Sprite2D" parent="."]
+position = Vector2(402, 215)
 texture = ExtResource("6_j6v8a")
 
-[node name="Options Menu" parent="." instance=ExtResource("6_6lqc4")]
+[node name="PlayButton" type="Area2D" parent="MainMenuGraphics"]
+script = ExtResource("3_cvktw")
+SceneResource = ExtResource("4_3n17a")
 
-[node name="Play Game" type="Node2D" parent="."]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainMenuGraphics/PlayButton"]
+position = Vector2(-4, 92)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bjp2o")
 
-[connection signal="timeout" from="Marker2D/MenuSpawnTimer" to="Marker2D" method="_on_menu_spawn_timer_timeout"]
-[connection signal="timeout" from="Marker2D2/MenuSpawnTimer" to="Marker2D2" method="_on_menu_spawn_timer_timeout"]
-[connection signal="input_event" from="Main Menu/PlayButtonArea" to="." method="_on_play_button_area_input_event"]
-[connection signal="input_event" from="Main Menu/OptionsButtonArea" to="." method="_on_options_button_area_input_event"]
+[node name="OptionsButton" type="Area2D" parent="MainMenuGraphics"]
+script = ExtResource("5_okq7f")
+SceneResource = ExtResource("4_3n17a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainMenuGraphics/OptionsButton"]
+position = Vector2(1, 162)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8y41n")
+
+[connection signal="input_event" from="MainMenuGraphics/PlayButton" to="MainMenuGraphics/PlayButton" method="_on_input_event"]
+[connection signal="input_event" from="MainMenuGraphics/OptionsButton" to="MainMenuGraphics/OptionsButton" method="_on_input_event"]

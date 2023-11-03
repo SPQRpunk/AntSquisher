@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://di7v0k8lp5uf7"]
+
+[ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_gegxp"]
+[ext_resource type="PackedScene" uid="uid://dxy57rrs2fccr" path="res://Scenes/marker_2d.tscn" id="2_2luqk"]
+[ext_resource type="Texture2D" uid="uid://bsd1i8r8hnbcu" path="res://Assets/Interface/PauseButton.png" id="3_6ajdu"]
+[ext_resource type="Script" path="res://Scripts/OptionsButton.gd" id="4_ak43w"]
+[ext_resource type="Resource" uid="uid://dstblipjjf1sg" path="res://Resources/SceneResource.tres" id="5_c6ypj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21v4r"]
+size = Vector2(108.333, 108.333)
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_gegxp")]
+
+[node name="Marker2D" parent="." instance=ExtResource("2_2luqk")]
+position = Vector2(384, 232)
+
+[node name="PauseButton" type="Sprite2D" parent="."]
+position = Vector2(760, 40)
+scale = Vector2(0.581818, 0.581818)
+texture = ExtResource("3_6ajdu")
+
+[node name="PauseButtonArea" type="Area2D" parent="PauseButton"]
+script = ExtResource("4_ak43w")
+SceneResource = ExtResource("5_c6ypj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PauseButton/PauseButtonArea"]
+position = Vector2(-0.833374, -0.833336)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_21v4r")
+
+[connection signal="input_event" from="PauseButton/PauseButtonArea" to="PauseButton/PauseButtonArea" method="_on_input_event"]

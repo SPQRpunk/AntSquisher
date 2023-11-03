@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="ColorResource" load_steps=2 format=3 uid="uid://dvylvauqpefkb"]
+
+[ext_resource type="Script" path="res://Resources/ColorResource.gd" id="1_qi51h"]
+
+[resource]
+script = ExtResource("1_qi51h")
