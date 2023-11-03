@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bubj884na54s2"]
+
+[ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_5fsny"]
+[ext_resource type="PackedScene" uid="uid://dxy57rrs2fccr" path="res://Scenes/marker_2d.tscn" id="2_dv2f5"]
+[ext_resource type="Script" path="res://Scripts/Marker2D.gd" id="3_3oe7i"]
+[ext_resource type="PackedScene" uid="uid://cd16psuh14cv4" path="res://Scenes/black_ant.tscn" id="4_0brqq"]
+[ext_resource type="Texture2D" uid="uid://docpj06d0xd6p" path="res://Assets/Interface/MainMenu6-3.png" id="5_wvke5"]
+[ext_resource type="PackedScene" uid="uid://bbhb8q8427qmn" path="res://Scenes/options_menu.tscn" id="6_c4ii8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ql4l"]
+radius = 34.0
+height = 174.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1vd5"]
+radius = 34.0
+height = 240.0
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_5fsny")]
+
+[node name="Marker2D" parent="." instance=ExtResource("2_dv2f5")]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(150, 85)
+script = ExtResource("3_3oe7i")
+AntScene = ExtResource("4_0brqq")
+
+[node name="MenuSpawnTimer" type="Timer" parent="Marker2D2"]
+wait_time = 2.0
+autostart = true
+
+[node name="Main Menu" type="Node2D" parent="."]
+
+[node name="PlayButtonArea" type="Area2D" parent="Main Menu"]
+
+[node name="PlayButtonCollider" type="CollisionShape2D" parent="Main Menu/PlayButtonArea"]
+position = Vector2(397, 301)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6ql4l")
+
+[node name="OptionsButtonArea" type="Area2D" parent="Main Menu"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main Menu/OptionsButtonArea"]
+position = Vector2(401, 369)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_f1vd5")
+
+[node name="MainMenuTexture" type="Sprite2D" parent="Main Menu"]
+top_level = true
+position = Vector2(399, 209)
+texture = ExtResource("5_wvke5")
+
+[node name="Options Menu" parent="." instance=ExtResource("6_c4ii8")]
+
+[node name="Play Game" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Marker2D2/MenuSpawnTimer" to="Marker2D2" method="_on_menu_spawn_timer_timeout"]
+[connection signal="input_event" from="Main Menu/PlayButtonArea" to="." method="_on_play_button_area_input_event"]
+[connection signal="input_event" from="Main Menu/OptionsButtonArea" to="." method="_on_options_button_area_input_event"]
