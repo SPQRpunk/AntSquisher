@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbhb8q8427qmn"]
+[gd_scene load_steps=18 format=3 uid="uid://bbhb8q8427qmn"]
 
 [ext_resource type="Texture2D" uid="uid://dcxd75l86n8wd" path="res://Assets/Interface/OptionsMenu.png" id="1_el83o"]
 [ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_gkhp1"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://d310lmlm2s4x8" path="res://Assets/Interface/Colors.png" id="6_qy4ve"]
 [ext_resource type="Texture2D" uid="uid://cg8jm62jktq7g" path="res://Assets/Interface/Sounds.png" id="7_sjq2r"]
 [ext_resource type="Texture2D" uid="uid://711x7npqkgbo" path="res://Assets/Interface/ReturnButton.png" id="8_wk74y"]
+[ext_resource type="Texture2D" uid="uid://h3sa61lursta" path="res://Assets/Interface/blue_sliderDown.png" id="9_7nuwr"]
+[ext_resource type="Texture2D" uid="uid://cxf7ie8rq6hcl" path="res://Assets/Interface/red_sliderDown.png" id="9_8lsno"]
+[ext_resource type="Texture2D" uid="uid://2kxb47ux2sam" path="res://Assets/Interface/green_sliderDown.png" id="10_lx7h3"]
 [ext_resource type="Script" path="res://Scripts/ColorSliders.gd" id="10_u145i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpvxk"]
@@ -59,10 +62,10 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Container"]
 layout_mode = 2
-offset_left = 177.0
-offset_top = 42.0
-offset_right = 669.0
-offset_bottom = 146.0
+offset_left = 168.0
+offset_top = 49.0
+offset_right = 660.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -72,37 +75,43 @@ ColorResource = ExtResource("2_byvki")
 [node name="RedSlider" type="HSlider" parent="ScrollContainer/Container/VBoxContainer"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("9_8lsno")
+theme_override_icons/grabber_highlight = ExtResource("9_8lsno")
 max_value = 255.0
 
 [node name="GreenSlider" type="HSlider" parent="ScrollContainer/Container/VBoxContainer"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("10_lx7h3")
+theme_override_icons/grabber_highlight = ExtResource("10_lx7h3")
 max_value = 255.0
 
 [node name="BlueSlider" type="HSlider" parent="ScrollContainer/Container/VBoxContainer"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("9_7nuwr")
+theme_override_icons/grabber_highlight = ExtResource("9_7nuwr")
 max_value = 255.0
 
-[node name="ColorsSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(257, 21)
-texture = ExtResource("6_qy4ve")
-
 [node name="GreenSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(105, 93)
+position = Vector2(103, 113)
 texture = ExtResource("4_rndqj")
 
 [node name="BlueSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(110, 126)
+position = Vector2(107, 160)
 texture = ExtResource("5_g4rwm")
 
 [node name="SoundsSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(261, 166)
+position = Vector2(268, 204)
 texture = ExtResource("7_sjq2r")
 
 [node name="RedSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(108, 57)
+position = Vector2(106, 65)
 texture = ExtResource("3_0ihxo")
+
+[node name="ColorsSprite" type="Sprite2D" parent="ScrollContainer/Container"]
+position = Vector2(266, 23)
+texture = ExtResource("6_qy4ve")
 
 [connection signal="input_event" from="ReturnButton/ReturnButtonArea" to="ReturnButton/ReturnButtonArea" method="_on_input_event"]
 [connection signal="value_changed" from="ScrollContainer/Container/VBoxContainer/RedSlider" to="ScrollContainer/Container/VBoxContainer" method="_on_red_slider_value_changed"]
