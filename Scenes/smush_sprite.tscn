@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpono8avgre0s"]
+[gd_scene load_steps=4 format=3 uid="uid://dpono8avgre0s"]
 
 [ext_resource type="Script" path="res://Scripts/SmushSprite.gd" id="1_ew64h"]
 [ext_resource type="Resource" uid="uid://dvylvauqpefkb" path="res://Resources/ColorResource.tres" id="2_voubm"]
+[ext_resource type="Resource" uid="uid://cruag6dmhv823" path="res://Resources/OptionsResource.tres" id="3_2b4h5"]
 
 [node name="Smush" type="Node2D"]
-scale = Vector2(2, 2)
 script = ExtResource("1_ew64h")
 ColorResource = ExtResource("2_voubm")
+optionsresource = ExtResource("3_2b4h5")
 
 [node name="SmushSprite" type="Sprite2D" parent="."]
 

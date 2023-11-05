@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu38r3p8ky24h"
+path="res://.godot/imported/fartsound-05.wav-14c2f343dbc9ff2e17ad9b630329c2bd.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFXPacks/Fart Sounds/fartsound-05.wav"
+dest_files=["res://.godot/imported/fartsound-05.wav-14c2f343dbc9ff2e17ad9b630329c2bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

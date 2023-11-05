@@ -1,0 +1,59 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bis4m204xd8xr"]
+
+[ext_resource type="StyleBox" uid="uid://rkj02e8watnp" path="res://Assets/Themes/optionsmenupanel.tres" id="1_816vs"]
+[ext_resource type="Texture2D" uid="uid://bi7iswkk8557o" path="res://Assets/Interface/blue_boxTick.png" id="1_c1in6"]
+[ext_resource type="Texture2D" uid="uid://c0fcntnwkiuh1" path="res://Assets/Interface/grey_circle.png" id="2_jpcn5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01wq3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1we8"]
+bg_color = Color(0, 0.45098, 0.878431, 1)
+border_width_left = 6
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mng2c"]
+bg_color = Color(0, 0.72549, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hme0w"]
+bg_color = Color(0, 0.721569, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d56on"]
+bg_color = Color(0.215686, 0.717647, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwmvp"]
+bg_color = Color(0.203922, 0.521569, 1, 1)
+border_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngniw"]
+bg_color = Color(0.0784314, 0.721569, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04giq"]
+bg_color = Color(0.972549, 0.341176, 0.505882, 1)
+
+[resource]
+OptionButton/styles/focus = SubResource("StyleBoxFlat_01wq3")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_x1we8")
+OptionButton/styles/hover_mirrored = null
+OptionButton/styles/normal = ExtResource("1_816vs")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxFlat_mng2c")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_hme0w")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_d56on")
+PopupMenu/colors/transparent = Color(0, 0, 0, 0)
+PopupMenu/icons/radio_checked = ExtResource("1_c1in6")
+PopupMenu/icons/radio_unchecked = ExtResource("2_jpcn5")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_nwmvp")
+PopupMenu/styles/panel = ExtResource("1_816vs")
+PopupMenu/styles/panel_disabled = SubResource("StyleBoxFlat_ngniw")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_04giq")
+Tree/colors/children_hl_line_color = Color(0.933333, 0, 0.0588235, 1)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3ft8nju3c7hc"
+path="res://.godot/imported/pop2.ogg-b2bdda5f12fa3e5277d6acecb08ccf02.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFXPacks/Pop Sounds/pop2.ogg"
+dest_files=["res://.godot/imported/pop2.ogg-b2bdda5f12fa3e5277d6acecb08ccf02.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
