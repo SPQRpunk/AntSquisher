@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1aek3pnye5e0"
+path="res://.godot/imported/Song2.ogg-04a82174954715d09a8407504170b9fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/MusicPacks/Retro Music/Song2.ogg"
+dest_files=["res://.godot/imported/Song2.ogg-04a82174954715d09a8407504170b9fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

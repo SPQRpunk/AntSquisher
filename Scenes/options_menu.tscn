@@ -1,18 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbhb8q8427qmn"]
+[gd_scene load_steps=9 format=3 uid="uid://bbhb8q8427qmn"]
 
 [ext_resource type="Texture2D" uid="uid://dcxd75l86n8wd" path="res://Assets/Interface/OptionsMenu.png" id="1_el83o"]
 [ext_resource type="PackedScene" uid="uid://dvcuc5n13pyob" path="res://Scenes/tile_map.tscn" id="1_gkhp1"]
-[ext_resource type="Resource" uid="uid://dvylvauqpefkb" path="res://Resources/ColorResource.tres" id="2_byvki"]
 [ext_resource type="Texture2D" uid="uid://bpatc5v2qrxsb" path="res://Assets/Interface/Options.png" id="2_qqhun"]
-[ext_resource type="Texture2D" uid="uid://bntv33llbslaw" path="res://Assets/Interface/Red.png" id="3_0ihxo"]
-[ext_resource type="Texture2D" uid="uid://bgo0wxfv4ywck" path="res://Assets/Interface/Green.png" id="4_rndqj"]
-[ext_resource type="Texture2D" uid="uid://dwtg8qjfgnjgo" path="res://Assets/Interface/Blue.png" id="5_g4rwm"]
 [ext_resource type="Script" path="res://Scripts/ReturnButtonArea.gd" id="5_l6167"]
 [ext_resource type="Resource" uid="uid://dstblipjjf1sg" path="res://Resources/SceneResource.tres" id="6_d3edn"]
-[ext_resource type="Texture2D" uid="uid://d310lmlm2s4x8" path="res://Assets/Interface/Colors.png" id="6_qy4ve"]
-[ext_resource type="Texture2D" uid="uid://cg8jm62jktq7g" path="res://Assets/Interface/Sounds.png" id="7_sjq2r"]
+[ext_resource type="PackedScene" uid="uid://cdbllrmoyifmu" path="res://Scenes/optionsmenucontainer.tscn" id="7_luslh"]
 [ext_resource type="Texture2D" uid="uid://711x7npqkgbo" path="res://Assets/Interface/ReturnButton.png" id="8_wk74y"]
-[ext_resource type="Script" path="res://Scripts/ColorSliders.gd" id="10_u145i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpvxk"]
 size = Vector2(100, 100)
@@ -44,67 +38,15 @@ position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_qpvxk")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = 47.0
+offset_left = 52.0
 offset_top = 188.0
-offset_right = 735.0
+offset_right = 740.0
 offset_bottom = 421.0
+follow_focus = true
 vertical_scroll_mode = 2
 
-[node name="Container" type="Control" parent="ScrollContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(0, 600)
+[node name="Container" parent="ScrollContainer" instance=ExtResource("7_luslh")]
+custom_minimum_size = Vector2(0, 980)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/Container"]
-layout_mode = 2
-offset_left = 177.0
-offset_top = 42.0
-offset_right = 669.0
-offset_bottom = 146.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-script = ExtResource("10_u145i")
-ColorResource = ExtResource("2_byvki")
-
-[node name="RedSlider" type="HSlider" parent="ScrollContainer/Container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-max_value = 255.0
-
-[node name="GreenSlider" type="HSlider" parent="ScrollContainer/Container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-max_value = 255.0
-
-[node name="BlueSlider" type="HSlider" parent="ScrollContainer/Container/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-max_value = 255.0
-
-[node name="ColorsSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(257, 21)
-texture = ExtResource("6_qy4ve")
-
-[node name="GreenSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(105, 93)
-texture = ExtResource("4_rndqj")
-
-[node name="BlueSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(110, 126)
-texture = ExtResource("5_g4rwm")
-
-[node name="SoundsSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(261, 166)
-texture = ExtResource("7_sjq2r")
-
-[node name="RedSprite" type="Sprite2D" parent="ScrollContainer/Container"]
-position = Vector2(108, 57)
-texture = ExtResource("3_0ihxo")
 
 [connection signal="input_event" from="ReturnButton/ReturnButtonArea" to="ReturnButton/ReturnButtonArea" method="_on_input_event"]
-[connection signal="value_changed" from="ScrollContainer/Container/VBoxContainer/RedSlider" to="ScrollContainer/Container/VBoxContainer" method="_on_red_slider_value_changed"]
-[connection signal="value_changed" from="ScrollContainer/Container/VBoxContainer/GreenSlider" to="ScrollContainer/Container/VBoxContainer" method="_on_green_slider_value_changed"]
-[connection signal="value_changed" from="ScrollContainer/Container/VBoxContainer/BlueSlider" to="ScrollContainer/Container/VBoxContainer" method="_on_blue_slider_value_changed"]

@@ -27,7 +27,6 @@ SceneResource = ExtResource("5_c6ypj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PauseButton/PauseButtonArea"]
 position = Vector2(-0.833374, -0.833336)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_21v4r")
 
 [connection signal="input_event" from="PauseButton/PauseButtonArea" to="PauseButton/PauseButtonArea" method="_on_input_event"]

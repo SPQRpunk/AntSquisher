@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd16psuh14cv4"]
+[gd_scene load_steps=11 format=3 uid="uid://cd16psuh14cv4"]
 
 [ext_resource type="Script" path="res://Scripts/black_ant.gd" id="1_kxk0c"]
 [ext_resource type="Texture2D" uid="uid://ci7icn3mhh0s7" path="res://Assets/Ants/AntSprite001-sheet.png" id="1_xukfn"]
 [ext_resource type="PackedScene" uid="uid://dpono8avgre0s" path="res://Scenes/smush_sprite.tscn" id="2_ltrnm"]
+[ext_resource type="Resource" uid="uid://cruag6dmhv823" path="res://Resources/OptionsResource.tres" id="3_68nqx"]
 [ext_resource type="Texture2D" uid="uid://bsxssijkjlosm" path="res://Assets/Ants/AntSpritecrushed.png" id="3_oncpy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1n28q"]
@@ -50,10 +51,10 @@ animations = [{
 radius = 16.0
 
 [node name="BlackAntBody" type="CharacterBody2D"]
-scale = Vector2(3, 3)
 safe_margin = 0.001
 script = ExtResource("1_kxk0c")
 smushscene = ExtResource("2_ltrnm")
+optionsresource = ExtResource("3_68nqx")
 
 [node name="AntCollide" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1n28q")

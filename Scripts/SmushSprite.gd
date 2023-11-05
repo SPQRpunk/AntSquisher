@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var ColorResource: Resource
+@export var ColorResource : Resource
+@export var optionsresource : Resource
 
 @onready var sprite = $SmushSprite
 
@@ -8,7 +9,7 @@ func _ready():
 	var random_number = randi() % 36
 	var texture = load("res://Assets/Default (256px)/splat%02d.png" % random_number)
 	sprite.set_texture(texture)
-	sprite.set_scale(Vector2(0.3, 0.3))
+	self.scale = Vector2(optionsresource.AntSize * 0.2, optionsresource.AntSize * 0.2)
 
 	modulate_texture()
 
@@ -17,9 +18,9 @@ func modulate_texture():
 	var limit_g = 1 - remap(ColorResource.GreenMod, 0, 255, 0, 1)
 	var limit_b = 1 - remap(ColorResource.BlueMod, 0, 255, 0, 1)
 	
-	var mod_r = randf_range(0, limit_r)
-	var mod_g = randf_range(0, limit_g)
-	var mod_b = randf_range(0, limit_b)
+	var mod_r = randf_range(0.2, limit_r)
+	var mod_g = randf_range(0.2, limit_g)
+	var mod_b = randf_range(0.2, limit_b)
 	
 	sprite.modulate.r = mod_r
 	sprite.modulate.g = mod_g

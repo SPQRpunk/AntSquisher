@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var smushscene: PackedScene
+@export var smushscene : PackedScene
+@export var optionsresource : Resource
 
 @onready var timer = $BlackAntTimer
 @onready var sprite = $AnimatedSprite2D
@@ -23,6 +24,7 @@ func ready():
 	sprite.is_playing()
 
 func _physics_process(_delta):
+	self.scale = Vector2(optionsresource.AntSize, optionsresource.AntSize)
 	if dir_x > 0 && global_position.x > r_side:
 		dir_x = 0
 	if dir_x < 0 && global_position.x < l_side:

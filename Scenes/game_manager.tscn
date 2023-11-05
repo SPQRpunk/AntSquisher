@@ -1,11 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc2q6ive0fe3s"]
+[gd_scene load_steps=21 format=3 uid="uid://dc2q6ive0fe3s"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_064wn"]
 [ext_resource type="Resource" uid="uid://dstblipjjf1sg" path="res://Resources/SceneResource.tres" id="2_1orip"]
 [ext_resource type="PackedScene" uid="uid://dnmddtejidcld" path="res://Scenes/boot_splash.tscn" id="2_shan5"]
+[ext_resource type="Script" path="res://Scripts/SoundManager.gd" id="3_iudhw"]
+[ext_resource type="Resource" uid="uid://cruag6dmhv823" path="res://Resources/OptionsResource.tres" id="4_fmu1u"]
+[ext_resource type="AudioStream" uid="uid://pk58muwmven1" path="res://Assets/Audio/MusicPacks/Ambience/track1.mp3" id="5_hxxwd"]
+[ext_resource type="AudioStream" uid="uid://dmxyabvyidic1" path="res://Assets/Audio/MusicPacks/Normal Music/Next to You.mp3" id="6_k066r"]
+[ext_resource type="AudioStream" uid="uid://80umr0b2sddr" path="res://Assets/Audio/MusicPacks/Normal Music/Song1.mp3" id="7_e676w"]
+[ext_resource type="AudioStream" uid="uid://cu8bi1kdfb10l" path="res://Assets/Audio/MusicPacks/Normal Music/Song2.mp3" id="8_e7egr"]
+[ext_resource type="AudioStream" uid="uid://uudfyoxpwdqq" path="res://Assets/Audio/MusicPacks/Normal Music/Song3.wav" id="9_xxgsb"]
+[ext_resource type="AudioStream" uid="uid://di1n36xqas6ut" path="res://Assets/Audio/MusicPacks/Retro Music/Song1.ogg" id="10_jtejw"]
+[ext_resource type="AudioStream" uid="uid://c1aek3pnye5e0" path="res://Assets/Audio/MusicPacks/Retro Music/Song2.ogg" id="11_w003e"]
+[ext_resource type="AudioStream" uid="uid://c1vhlxovt76nk" path="res://Assets/Audio/MusicPacks/Retro Music/Song3.ogg" id="12_svbpq"]
+[ext_resource type="AudioStream" uid="uid://c2cq1yvqio0gb" path="res://Assets/Audio/MusicPacks/Retro Music 2/Song1.mp3" id="13_vlxvg"]
+[ext_resource type="AudioStream" uid="uid://dhwtuc4bt0t8h" path="res://Assets/Audio/MusicPacks/Retro Music 2/Song2.mp3" id="14_51mek"]
+[ext_resource type="AudioStream" uid="uid://b5j5cruotcjug" path="res://Assets/Audio/MusicPacks/Retro Music 2/Song3.mp3" id="15_8tyqc"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ee6kw"]
+streams_count = 1
+random_pitch = 1.0
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("5_hxxwd")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jhj5x"]
+streams_count = 4
+random_pitch = 1.0
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("6_k066r")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_e676w")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("8_e7egr")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("9_xxgsb")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0hakl"]
+streams_count = 3
+stream_0/stream = ExtResource("10_jtejw")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("11_w003e")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("12_svbpq")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cewxx"]
+streams_count = 3
+stream_0/stream = ExtResource("13_vlxvg")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("14_51mek")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("15_8tyqc")
+stream_2/weight = 1.0
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_064wn")
 SceneVariables = ExtResource("2_1orip")
 
-[node name="BootSplash" parent="." instance=ExtResource("2_shan5")]
+[node name="SoundManager" type="Node2D" parent="."]
+script = ExtResource("3_iudhw")
+optionsresource = ExtResource("4_fmu1u")
+ambiencepack = SubResource("AudioStreamRandomizer_ee6kw")
+normalpack = SubResource("AudioStreamRandomizer_jhj5x")
+retropack = SubResource("AudioStreamRandomizer_0hakl")
+retro2pack = SubResource("AudioStreamRandomizer_cewxx")
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="SoundManager"]
+
+[node name="CurrentScene" type="Node2D" parent="."]
+
+[node name="BootSplash" parent="CurrentScene" instance=ExtResource("2_shan5")]

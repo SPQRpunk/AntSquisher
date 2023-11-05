@@ -1,0 +1,326 @@
+[gd_scene load_steps=32 format=3 uid="uid://cdbllrmoyifmu"]
+
+[ext_resource type="Script" path="res://Scripts/ColorSliders.gd" id="1_okeq4"]
+[ext_resource type="Resource" uid="uid://dvylvauqpefkb" path="res://Resources/ColorResource.tres" id="2_uad1d"]
+[ext_resource type="Texture2D" uid="uid://cxf7ie8rq6hcl" path="res://Assets/Interface/red_sliderDown.png" id="3_8t1ln"]
+[ext_resource type="Texture2D" uid="uid://2kxb47ux2sam" path="res://Assets/Interface/green_sliderDown.png" id="4_3pl46"]
+[ext_resource type="Texture2D" uid="uid://h3sa61lursta" path="res://Assets/Interface/blue_sliderDown.png" id="5_qebod"]
+[ext_resource type="Texture2D" uid="uid://bgo0wxfv4ywck" path="res://Assets/Interface/Green.png" id="6_rh8hg"]
+[ext_resource type="Texture2D" uid="uid://dwtg8qjfgnjgo" path="res://Assets/Interface/Blue.png" id="7_321bw"]
+[ext_resource type="Texture2D" uid="uid://cg8jm62jktq7g" path="res://Assets/Interface/Sounds.png" id="8_p5c1d"]
+[ext_resource type="Texture2D" uid="uid://bntv33llbslaw" path="res://Assets/Interface/Red.png" id="9_yb2cm"]
+[ext_resource type="Texture2D" uid="uid://d310lmlm2s4x8" path="res://Assets/Interface/Colors.png" id="10_ykxxg"]
+[ext_resource type="Texture2D" uid="uid://dmrhlag7alg1l" path="res://Assets/Interface/Volume.png" id="11_wy1fp"]
+[ext_resource type="Texture2D" uid="uid://b3q4xtx22l0ya" path="res://Assets/Interface/Pack.png" id="12_p266c"]
+[ext_resource type="Script" path="res://Scripts/MusicVBox.gd" id="12_t284q"]
+[ext_resource type="Texture2D" uid="uid://dig77g4auuiav" path="res://Assets/Interface/Music.png" id="13_2v0if"]
+[ext_resource type="Texture2D" uid="uid://bi8ckxionmbxs" path="res://Assets/Interface/Ants.png" id="14_wrt2r"]
+[ext_resource type="Texture2D" uid="uid://digupultncwvi" path="res://Assets/Interface/Size.png" id="15_f7uxo"]
+[ext_resource type="Texture2D" uid="uid://dm6xu7qo81rop" path="res://Assets/Interface/Amount.png" id="16_1lbsf"]
+[ext_resource type="Script" path="res://Scripts/AntsOptionsVBox.gd" id="16_ao52l"]
+[ext_resource type="Texture2D" uid="uid://6mj4pcoo1top" path="res://Assets/Interface/Bubbles.png" id="17_47yu1"]
+[ext_resource type="Theme" uid="uid://bis4m204xd8xr" path="res://Assets/Themes/optionsmenucontainer.tres" id="17_biksp"]
+[ext_resource type="Resource" uid="uid://cruag6dmhv823" path="res://Resources/OptionsResource.tres" id="17_retth"]
+[ext_resource type="Texture2D" uid="uid://chtclc5mgaluv" path="res://Assets/Interface/Farts.png" id="18_nmy7q"]
+[ext_resource type="Texture2D" uid="uid://df2ibyo8vf8ut" path="res://Assets/Interface/Retro.png" id="19_bp3c4"]
+[ext_resource type="Texture2D" uid="uid://b2cktgcgrub14" path="res://Assets/Interface/grey_arrowDownWhite.png" id="19_rrk5i"]
+[ext_resource type="Texture2D" uid="uid://bvjymioqrjtks" path="res://Assets/Interface/Nature.png" id="21_r03ov"]
+[ext_resource type="Texture2D" uid="uid://b3vutyehw1ukd" path="res://Assets/Interface/Normal.png" id="22_mx0or"]
+[ext_resource type="Texture2D" uid="uid://eal6m1h5fh0w" path="res://Assets/Interface/Retro1.png" id="23_h73oa"]
+[ext_resource type="Texture2D" uid="uid://dccexgfrthci0" path="res://Assets/Interface/Retro2.png" id="24_txecg"]
+[ext_resource type="Texture2D" uid="uid://86iqit0coqcj" path="res://Assets/Interface/grey_sliderDown.png" id="25_dactt"]
+[ext_resource type="Texture2D" uid="uid://c71kkao7lyjwy" path="res://Assets/Interface/border.png" id="27_bvmat"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m2o3m"]
+specular_color = Color(0, 0.431373, 0.85098, 1)
+
+[node name="Container" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 677.0
+offset_bottom = 979.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.317647, 0.560784, 1)
+layout_mode = 0
+offset_top = -12.0
+offset_right = 901.0
+offset_bottom = 201.0
+texture = SubResource("CanvasTexture_m2o3m")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.317647, 0.560784, 1)
+layout_mode = 0
+offset_left = -93.0
+offset_top = 221.0
+offset_right = 808.0
+offset_bottom = 467.0
+texture = SubResource("CanvasTexture_m2o3m")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.317647, 0.560784, 1)
+layout_mode = 0
+offset_left = -92.0
+offset_top = 496.0
+offset_right = 809.0
+offset_bottom = 743.0
+texture = SubResource("CanvasTexture_m2o3m")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.317647, 0.560784, 1)
+layout_mode = 0
+offset_left = -54.0
+offset_top = 767.0
+offset_right = 847.0
+offset_bottom = 959.0
+texture = SubResource("CanvasTexture_m2o3m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 174.0
+offset_top = 62.0
+offset_right = 624.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_okeq4")
+ColorResource = ExtResource("2_uad1d")
+
+[node name="RedSlider" type="HSlider" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_8t1ln")
+theme_override_icons/grabber_highlight = ExtResource("3_8t1ln")
+max_value = 255.0
+
+[node name="GreenSlider" type="HSlider" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_3pl46")
+theme_override_icons/grabber_highlight = ExtResource("4_3pl46")
+max_value = 255.0
+
+[node name="BlueSlider" type="HSlider" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_qebod")
+theme_override_icons/grabber_highlight = ExtResource("5_qebod")
+max_value = 255.0
+
+[node name="SoundVBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 279.0
+offset_right = 626.0
+offset_bottom = 452.0
+
+[node name="HSlider" type="HSlider" parent="SoundVBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("25_dactt")
+theme_override_icons/grabber_highlight = ExtResource("25_dactt")
+
+[node name="OptionButton" type="OptionButton" parent="SoundVBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("17_biksp")
+theme_override_icons/arrow = ExtResource("19_rrk5i")
+toggle_mode = false
+flat = true
+item_count = 3
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = ""
+popup/item_0/icon = ExtResource("17_47yu1")
+popup/item_0/id = 0
+popup/item_1/text = ""
+popup/item_1/icon = ExtResource("18_nmy7q")
+popup/item_1/id = 1
+popup/item_2/text = ""
+popup/item_2/icon = ExtResource("19_bp3c4")
+popup/item_2/id = 2
+
+[node name="MusicVBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 554.0
+offset_right = 626.0
+offset_bottom = 727.0
+script = ExtResource("12_t284q")
+optionsresource = ExtResource("17_retth")
+
+[node name="HSlider" type="HSlider" parent="MusicVBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("25_dactt")
+theme_override_icons/grabber_highlight = ExtResource("25_dactt")
+min_value = -80.0
+max_value = 24.0
+
+[node name="OptionButton" type="OptionButton" parent="MusicVBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("17_biksp")
+theme_override_icons/arrow = ExtResource("19_rrk5i")
+flat = true
+item_count = 4
+selected = 0
+popup/item_0/text = ""
+popup/item_0/icon = ExtResource("21_r03ov")
+popup/item_0/id = 0
+popup/item_1/text = ""
+popup/item_1/icon = ExtResource("22_mx0or")
+popup/item_1/id = 1
+popup/item_2/text = ""
+popup/item_2/icon = ExtResource("23_h73oa")
+popup/item_2/id = 2
+popup/item_3/text = ""
+popup/item_3/icon = ExtResource("24_txecg")
+popup/item_3/id = 3
+
+[node name="AntsVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 176.0
+offset_top = 826.0
+offset_right = 626.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("16_ao52l")
+OptionsResource = ExtResource("17_retth")
+
+[node name="SizeSlider" type="HSlider" parent="AntsVBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("25_dactt")
+theme_override_icons/grabber_highlight = ExtResource("25_dactt")
+min_value = 1.0
+max_value = 6.0
+value = 1.0
+scrollable = false
+tick_count = 6
+ticks_on_borders = true
+
+[node name="AmountSlider" type="HSlider" parent="AntsVBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("25_dactt")
+theme_override_icons/grabber_highlight = ExtResource("25_dactt")
+min_value = 0.5
+max_value = 3.0
+step = 0.5
+value = 0.5
+tick_count = 6
+ticks_on_borders = true
+
+[node name="GreenSprite" type="Sprite2D" parent="."]
+position = Vector2(109, 126)
+texture = ExtResource("6_rh8hg")
+
+[node name="BlueSprite" type="Sprite2D" parent="."]
+position = Vector2(123, 172)
+texture = ExtResource("7_321bw")
+
+[node name="SoundsSprite" type="Sprite2D" parent="."]
+position = Vector2(326, 254)
+texture = ExtResource("8_p5c1d")
+
+[node name="RedSprite" type="Sprite2D" parent="."]
+position = Vector2(128, 77)
+texture = ExtResource("9_yb2cm")
+
+[node name="ColorsSprite" type="Sprite2D" parent="."]
+position = Vector2(328, 27)
+texture = ExtResource("10_ykxxg")
+
+[node name="Volume" type="Sprite2D" parent="."]
+position = Vector2(86, 316)
+texture = ExtResource("11_wy1fp")
+
+[node name="Pack" type="Sprite2D" parent="."]
+position = Vector2(113, 410)
+texture = ExtResource("12_p266c")
+
+[node name="Music" type="Sprite2D" parent="."]
+position = Vector2(327, 525)
+texture = ExtResource("13_2v0if")
+
+[node name="Volume2" type="Sprite2D" parent="."]
+position = Vector2(89, 593)
+texture = ExtResource("11_wy1fp")
+
+[node name="Pack2" type="Sprite2D" parent="."]
+position = Vector2(114, 684)
+texture = ExtResource("12_p266c")
+
+[node name="Ants" type="Sprite2D" parent="."]
+position = Vector2(328, 801)
+texture = ExtResource("14_wrt2r")
+
+[node name="Size" type="Sprite2D" parent="."]
+position = Vector2(124, 866)
+texture = ExtResource("15_f7uxo")
+
+[node name="Amount" type="Sprite2D" parent="."]
+position = Vector2(84, 923)
+texture = ExtResource("16_1lbsf")
+
+[node name="Border2" type="Sprite2D" parent="."]
+position = Vector2(518, 25)
+scale = Vector2(0.79, 1)
+texture = ExtResource("27_bvmat")
+
+[node name="Border5" type="Sprite2D" parent="."]
+position = Vector2(143, 25)
+scale = Vector2(0.756667, 1)
+texture = ExtResource("27_bvmat")
+flip_h = true
+
+[node name="Border3" type="Sprite2D" parent="."]
+position = Vector2(519.5, 799)
+scale = Vector2(0.79, 1)
+texture = ExtResource("27_bvmat")
+
+[node name="Border10" type="Sprite2D" parent="."]
+position = Vector2(144.5, 801)
+scale = Vector2(0.756667, 1)
+texture = ExtResource("27_bvmat")
+flip_h = true
+
+[node name="Border6" type="Sprite2D" parent="."]
+position = Vector2(516.5, 254)
+scale = Vector2(0.79, 1)
+texture = ExtResource("27_bvmat")
+
+[node name="Border7" type="Sprite2D" parent="."]
+position = Vector2(141.5, 254)
+scale = Vector2(0.756667, 1)
+texture = ExtResource("27_bvmat")
+flip_h = true
+
+[node name="Border8" type="Sprite2D" parent="."]
+position = Vector2(516.5, 528)
+scale = Vector2(0.79, 1)
+texture = ExtResource("27_bvmat")
+
+[node name="Border9" type="Sprite2D" parent="."]
+position = Vector2(141.5, 528)
+scale = Vector2(0.756667, 1)
+texture = ExtResource("27_bvmat")
+flip_h = true
+
+[connection signal="value_changed" from="VBoxContainer/RedSlider" to="VBoxContainer" method="_on_red_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/GreenSlider" to="VBoxContainer" method="_on_green_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/BlueSlider" to="VBoxContainer" method="_on_blue_slider_value_changed"]
+[connection signal="value_changed" from="MusicVBox/HSlider" to="MusicVBox" method="_on_h_slider_value_changed"]
+[connection signal="item_selected" from="MusicVBox/OptionButton" to="MusicVBox" method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="AntsVBox/SizeSlider" to="AntsVBox" method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="AntsVBox/AmountSlider" to="AntsVBox" method="_on_amount_slider_value_changed"]
